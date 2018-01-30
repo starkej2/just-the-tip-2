@@ -1,4 +1,4 @@
-package justthetip.binaryblacksheep.com.justthetip
+package com.binaryblacksheep.justthetip
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
