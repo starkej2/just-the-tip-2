@@ -44,7 +44,18 @@ dependencies {
     implementation "com.android.support:design:$supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
 
+    // dependency injection
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+
     // testing
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$androidTestRunnerVersion"
+}
+
+kapt {
+    generateStubs = true
 }
