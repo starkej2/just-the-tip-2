@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+// TEMP need this? apply plugin: 'kotlin-kapt'
 
 def versionMajor = 2
 def versionMinor = 0
@@ -56,6 +57,6 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$androidTestRunnerVersion"
 }
 
-kapt {
+kapt { // TEMP I don't think this is needed w/ apply plugin: 'kotlin-kapt'
     generateStubs = true
 }

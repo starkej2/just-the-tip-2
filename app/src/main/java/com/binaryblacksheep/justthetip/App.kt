@@ -9,6 +9,8 @@ import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import dagger.android.HasActivityInjector
 
+// TEMP resource
+// https://github.com/google/dagger/issues/832
 class App : DaggerApplication(), HasActivityInjector { // TEMP what does HasActivityInjector do?
     val appComponent: AppComponent by lazy { buildAppComponent() }
 
