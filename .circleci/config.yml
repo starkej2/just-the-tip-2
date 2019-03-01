@@ -4,7 +4,7 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/code
+    working_directory: ~/repo
 
     docker:
       # specify the version you desire here
@@ -13,12 +13,17 @@ jobs:
     environment:
       # customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
+      TERM: dumb
 
     steps:
       - checkout
 
+      # download and cache dependencies
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+          keys:
+          - v1-dependencies-{{ checksum "build.gradle" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
 
       - run:
           name: Download Dependencies
@@ -27,15 +32,8 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+          key: v1-dependencies-{{ checksum "build.gradle" }}
 
       - run:
           name: Run Tests
-          command: ./gradlew lint test
-
-      - store_artifacts:
-          path: app/build/reports
-          destination: reports
-
-      - store_test_results:
-          path: app/build/test-results
+          command: ./gradlew test
