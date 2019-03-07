@@ -79,8 +79,8 @@ task copyFramework {
         copy {
             from srcFile.parent
             into targetDir
-            include 'calculate.framework/**'
-            include 'calculate.framework.dSYM'
+            include 'calculator.framework/**'
+            include 'calculator.framework.dSYM'
         }
     }
 }
