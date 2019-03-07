@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import calculate
+import calculator
 
 class iosAppTests: XCTestCase {
     
