@@ -2,7 +2,7 @@
     package="com.binaryblacksheep.justthetip">
 
     <application
-        android:name=".MyApplication"
+        android:name=".App"
         android:allowBackup="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
