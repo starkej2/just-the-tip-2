@@ -23,5 +23,5 @@ pluginManagement {
 
 enableFeaturePreview('GRADLE_METADATA')
 
-include ':calculate'
+include ':calculator'
 include ':androidApp'
